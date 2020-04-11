@@ -37,7 +37,7 @@ export default {
     }
   },
 mounted() {
-axios.get('http://localhost:3000/api/covidnews')
+axios.get('/covidnews')
 .then((response) =>{
   console.log(response.data.articles);
   this.coronaData = response.data.articles;
