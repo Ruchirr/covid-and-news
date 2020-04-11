@@ -16,9 +16,7 @@
       <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b>
     </div> -->
 
-<h1>
-  Data
-</h1>
+
 </div>
 </template>
 <script>

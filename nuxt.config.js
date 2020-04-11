@@ -50,7 +50,7 @@ module.exports = {
     icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
   },
   axios:{
-    baseURL: process.env.BASE_URL || 'http://localhost:3000/api'
+    baseURL: process.env.BASE_URL || 'http://localhost:3000/ '
   },
   server: {
     port: process.env.PORT || 3000
