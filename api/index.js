@@ -11,7 +11,7 @@ var express = require("express");
 var app = express();
 var fetch = require("node-fetch");
 app.get('/covidnews', async function(req, res){
-  const api_url = await  fetch("http://newsapi.org/v2/top-headlines?country=in&apiKey=eb1ed87055d544a6896c608a5bb3c7ad");
+  const api_url = await  fetch("http://newsapi.org/v2/top-headlines?country=au&apiKey=eb1ed87055d544a6896c608a5bb3c7ad");
     //const api_url = await res_fetch.json();
     //const fetch_res  = await fetch(api_url);
     const jsonObj = await api_url.json();

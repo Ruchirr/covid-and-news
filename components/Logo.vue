@@ -1,21 +1,22 @@
 <template>
 <div class="table-responsive-md table-responsive-sm table-responsive-lg table-responsive-xl table-responsive">
-  <!-- sticky-header -->
+  <!-- sticky-header
+  :fields="fields" -->
   <b-table
     striped hover
-    responsive="true"
+    responsive="sm"
       :items="coronaData"
-      :fields="fields"
-      large
 
+
+      large
+      :sort-direction="sortDirection"
     >
     </b-table>
 
-    <!-- <div>
+<div>
       Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
       <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b>
-    </div> -->
-
+    </div>
 
 </div>
 </template>
@@ -24,8 +25,8 @@ import axios from 'axios';
 export default {
   data(){
   return {
-    sortBy: 'age',
-        sortDesc: false,
+    sortBy: 'deaths',
+        sortDesc: true,
     coronaData:{},
     fields: [
           { key: 'country_name', sortable: true },
