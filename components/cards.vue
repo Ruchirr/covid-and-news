@@ -135,7 +135,6 @@ methods:{
       let url = this.urlBase+section+"&apiKey="+this.ApiKey;
       axios.get(url).then((response) => {
         this.coronaData = response.data.articles;
-        console.log(response.data);
       }).catch( error => { console.log(error); });
     },
     unHideFlags(){
