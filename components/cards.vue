@@ -83,7 +83,7 @@ export default {
       'ma', 'mx','my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl', 'pt', 'ro', 'rs', 'ru',
       'sa', 'se', 'sg', 'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za' ],
       x:"au",
-      urlBase: 'http://newsapi.org/v2/top-headlines?country=',
+      urlBase: 'https://newsapi.org/v2/top-headlines?country=',
       ApiKey: 'eb1ed87055d544a6896c608a5bb3c7ad',
 
       post: {},
