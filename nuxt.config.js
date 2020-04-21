@@ -28,7 +28,8 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: "@/plugins/chart", ssr: false }],
+  plugins: [],
+
   /*
   ** Nuxt.js dev-modules
   */
@@ -45,6 +46,7 @@ module.exports = {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
+    '@nuxtjs/svg'
   ],
   bootstrapVue: {
     icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
@@ -59,6 +61,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['vue-social-sharing'],
     /*
     ** You can extend webpack config here
     */

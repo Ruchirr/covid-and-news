@@ -2,16 +2,22 @@
 <div class="table-responsive-md table-responsive-sm table-responsive-lg table-responsive-xl table-responsive">
   <!-- sticky-header
   :fields="fields" -->
+
   <b-table
-    striped hover
+
+     hover table-secondary
     responsive="sm"
       :items="coronaData"
-
-
       large
       :sort-direction="sortDirection"
+      title= "Corona Virus All Over The World"
+      table-variant="info"
+      head-variant="dark"
+
+
     >
     </b-table>
+
 
 <div>
       Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
@@ -34,7 +40,7 @@ export default {
           { key: 'deaths', sortable: true },
 
            { key: 'total_recovered', sortable: true },
-          { key: 'new_deaths', sortable: true },
+          { key: 'new_deaths', sortable: true, variant: 'danger' },
           { key: 'new_cases', sortable: true },
           { key: 'serious_critical', sortable: true },
             { key: 'active_cases', sortable: true },
@@ -56,18 +62,3 @@ axios.get('/api/coronavirus')
 
 }
 </script>
-<style>
-.NuxtLogo {
-  animation: 1s appear;
-  margin: auto;
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-</style>

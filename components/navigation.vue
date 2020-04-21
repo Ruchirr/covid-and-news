@@ -7,6 +7,7 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
   <b-nav-item to="/">Home</b-nav-item>
+   <b-nav-item to="/isc">India</b-nav-item>
   <b-nav-item to="/news">News</b-nav-item>
   <!-- <b-nav-item to="/coronaphotos">Link</b-nav-item>
   <b-nav-item to="/coronaphotos">Link</b-nav-item>

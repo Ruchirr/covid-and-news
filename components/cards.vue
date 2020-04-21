@@ -6,6 +6,7 @@
         <b-col class="bv-example-row" v-for="url in section" :key="url"  >
           <b-button  v-b-toggle.collapse-1 variant="none" @click="getPosts(url)">
         <country-flag :country='url' size='big' class="rounded"/>
+        <h6 class="font-weight-light">{{url}}</h6>
         </b-button>
          </b-col>
       </b-row>
@@ -58,6 +59,9 @@
     <template v-slot:footer>
       <i class="float-left font-weight-lighter mt-1 mt-sm-1 mt-md-1
       mt-lg-1 mt-xl-1" style="font-size:1.7vw; ">Published At: {{coronaData[i].publishedAt}}</i>
+
+      <b-button class="float-right ml-2 ml-sm-2 ml-md-2
+      ml-lg-2 ml-xl-2" variant="outline-dark" @click="asd()">Share</b-button>
       <b-button class="float-right" :href="coronaData[i].url" variant="outline-info">Website</b-button>
       </template>
   </b-card>
@@ -108,6 +112,17 @@ mounted() {
 //this.getPosts('in')
 },
 methods:{
+  asd(title, image, description){
+    if(navigator.share){
+      navigator.share({
+        title: title,
+        imgage: image,
+        description: description
+      }).then(()=>{
+        console.log("Share Success")
+      }).catch(console.err);
+    }
+  },
  clearInterval() {
         if (this.interval) {
           clearInterval(this.interval)
