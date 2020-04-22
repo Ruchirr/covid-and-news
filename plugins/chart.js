@@ -1,8 +1,6 @@
-import Vue from "vue";
-import VueCharts from "chart.js"
+import Vue from 'vue';
+import Echarts from 'vue-echarts';
 
-Vue.use(VueCharts);
-import Vue from 'vue'
-import VueGoogleCharts from 'vue-google-charts'
-
-Vue.use(VueGoogleCharts)
+import 'echarts/lib/chart/bar';
+import 'echarts/lib/chart/line';
+Vue.component('chart', Echarts);

@@ -7,11 +7,23 @@
      hover table-secondary
     responsive="sm"
       :items="coronaIndiaData"
+
       large
       table-variant="info"
       head-variant="dark"
     >
     </b-table>
+
+    <!-- <b-table
+     hover table-secondary
+    responsive="sm"
+      :items="coronaIndiaDataTested"
+
+      large
+      table-variant="info"
+      head-variant="dark"
+    >
+    </b-table> -->
 </div>
 </template>
 
@@ -20,7 +32,8 @@ import axios from 'axios';
 export default {
   data(){
     return{
-    coronaIndiaData:{}
+    coronaIndiaData:{},
+    coronaIndiaDataTested:{},
     }
   },
 
@@ -29,6 +42,7 @@ export default {
 .then((response) =>{
   console.log(response.data);
   this.coronaIndiaData = response.data.statewise;
+  this.coronaIndiaDataTested = response.data.cases_time_series;
 
 }).catch((err) =>{
   console.log(err);

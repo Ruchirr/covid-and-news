@@ -1,48 +1,50 @@
 <template>
-
 <div>
+<!-- <div class="chart-wrapper">
+  <chart :options="chartOptionsBar"></chart>
+
+</div>
+
+<div class="chart-wrapper">
+  <chart :options="chartOptionsLine"></chart>
+</div> -->
 
 
-  <GChart
-    :settings="{packages: ['bar']}"
-    :data="chartData"
-    :options="chartOptions"
-    :createChart="(el, google) => new google.charts.Bar(el)"
-    @ready="onChartReady"
-  />
-<!--
-<div>
-  <trend
-    :data="[0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]"
-    :gradient="['#6fa8dc', '#42b983', '#2c3e50']"
-    auto-draw
-    smooth>
-  </trend>
-  </div>
-    <div class="large">
+<v-card
+      class="mx-auto text-center"
+      color="green"
+      dark
+      max-width="1200"
+    >
+      <v-card-text>
+        <v-sheet color="rgba(0, 0, 0, .12)">
+ <v-sparkline
+      :value="value"
+      :gradient="gradient"
+      :smooth="radius || false"
+      :padding="padding"
+      :line-width="width"
+      :stroke-linecap="lineCap"
+      :gradient-direction="gradientDirection"
+      :fill="fill"
+      :type="type"
+      :auto-line-width="autoLineWidth"
+      auto-draw
+      height="150"
+    ></v-sparkline>
+    </v-sheet>
+      </v-card-text>
 
-        <b-card class=" mr-sm-5 mr-md-5 mr-lg-5 mr-xl-5 mr-5
-      ml-5 ml-sm-5 ml-md-5 ml-lg-5 ml-xl-5 mt-10 mt-sm-10 mt-md-10
-      mt-lg-10 mt-xl-10 mx-auto overflow-hidden rounded-sm">
-    <v-sparkline
-@load="funx"
-        :value="value"
-        :labels="lables"
-        :gradient="gradient"
-        smooth
-        :padding="padding"
-        :line-width="width"
-        :stroke-linecap="lineCap"
-        :gradient-direction="gradientDirection"
-        :fill="fill"
-        :type="type"
-        :auto-line-width="autoLineWidth"
-        auto-draw
-        show-labels="true"
-      ></v-sparkline>
-       </b-card>
-  </div> -->
+         <v-card-text >
+          <span>Total Confirmed Cases In India</span>
+        </v-card-text>
 
+      <v-divider></v-divider>
+
+      <v-card-actions class="justify-center">
+        <v-btn block text>Date: 30 January to Today</v-btn>
+      </v-card-actions>
+    </v-card>
 </div>
 </template>
 
@@ -56,69 +58,65 @@ const gradients = [
   ['#f72047', '#ffd200', '#1feaea'],
 ]
 import axios from 'axios'
-import { GChart } from 'vue-google-charts'
 
   export default {
-     components: {
-    GChart
-  },
     data () {
       return {
+        coronaIndiaData:{},
 
-       chartsLib: null,
-      // Array will be automatically processed with visualization.arrayToDataTable function
-      chartData: [
-        ['Year', 'Sales', 'Expenses', 'Profit'],
-        ['2014', 1000, 400, 200],
-        ['2015', 1170, 460, 250],
-        ['2016', 660, 1120, 300],
-        ['2017', 1030, 540, 350]
-      ]
+width: 2,
+    radius: 10,
+    padding: 8,
+    lineCap: 'round',
+    gradient: gradients[5],
+    value: [],
+    gradientDirection: 'top',
+    gradients,
+    fill: false,
+    type: 'trend',
+    autoLineWidth: false,
+
     }
   },
-        mounted(){
-   axios.get('/api/coronavirusIndia')
+    mounted(){
+
+ axios.get('/api/coronavirusIndia')
 .then((response) =>{
-  console.log(response.data.cases_time_series);
-  this.coronaIndiaData = response.cases_time_series;
+  console.log(response.data);
+  //this.coronaIndiaData = response.data.statewise;
+  this.coronaIndiaData = response.data.cases_time_series;
+  console.log(response.data.cases_time_series[0].date);
+
+  //this.chartOptionsLine.xAxis.data[3]=['q1','q2','q3'];
+//this.chartOptionsLine.series.data[i];
+   for(var i=0;i<83;i++){
+       this.value.push(parseInt(response.data.cases_time_series[i].totalconfirmed));
+
+      //  this.chartOptionsLine.xAxis.data.push(response.data.cases_time_series[i].date);
+        //this.chartOptionsLine.series[i].data.push(response.data.cases_time_series[i].totalconfirmed);
+         }
+        // console.log(this.chartOptionsLine.xAxis.data[2]);
 }).catch((err) =>{
   console.log(err);
 });
 
 
+//    axios.get('/api/coronavirusIndia')
+// .then((response) =>{
+//   console.log("svsvsvsdf"+response.data.cases_time_series);
+//   this.coronaIndiaData = response.cases_time_series;
+//   //console.log(this.coronaIndiaData[3].date);
+// // this.chartOptionsLine.xAxis.data[3]=['q1','q2','q3'];
+// // this.chartOptionsLine.series.data[i];
+//   //  for(var i=0;i<10;i++){
+//   //      this.chartOptionsLine.xAxis.data[i].push(this.coronaIndiaData[i].date);
+//   //       // this.chartOptionsLine.series.data[i] = this.coronaIndiaData[i].totalconfirmed;
+//   //        }
+// }).catch((err) =>{
+//   console.log(err);
+// });
 
- },
-  computed: {
-    chartOptions () {
-      if (!this.chartsLib) return null
-      return this.chartsLib.charts.Bar.convertOptions({
-        chart: {
-          title: 'Company Performance',
-          subtitle: 'Sales, Expenses, and Profit: 2014-2017'
-        },
-        bars: 'horizontal', // Required for Material Bar Charts.
-        hAxis: { format: 'decimal' },
-        height: 400,
-        colors: ['#1b9e77', '#d95f02', '#7570b3']
-      })
-    }
-  },
-   methods: {
-    onChartReady (chart, google) {
-      this.chartsLib = google
     },
-    funx(){
-
-     for(var i=0;i<10;i++){
-       for(var j=0;j<10;j++){
-        this.value[i][j] = this.coronaIndiaData[i].date;
-        //this.lables[i][j] = this.coronaIndiaData[i].date;
-       }
-
-}
-}
   }
-
-}
 
 </script>
