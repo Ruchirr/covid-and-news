@@ -7,7 +7,7 @@
      hover table-secondary
     responsive="sm"
       :items="coronaIndiaData"
-
+       :fields="fields"
       large
       table-variant="info"
       head-variant="dark"
@@ -34,13 +34,22 @@ export default {
     return{
     coronaIndiaData:{},
     coronaIndiaDataTested:{},
+     fields: [
+        { key: 'state', variant: 'dark' },
+          { key: 'active'},
+          { key: 'confirmed', variant: 'warning' },
+           { key: 'deaths', variant: 'danger'},
+          { key: 'recovered', variant: 'success' },
+           { key: 'statecode'},
+             { key: 'lastupdatedtime'},
+        ],
     }
   },
 
  mounted(){
    axios.get('/api/coronavirusIndia')
 .then((response) =>{
-  // console.log(response.data);
+  console.log(response.data);
   this.coronaIndiaData = response.data.statewise;
   this.coronaIndiaDataTested = response.data.cases_time_series;
 
