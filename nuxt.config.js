@@ -35,21 +35,20 @@ module.exports = {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-    // Simple usage
-    '@nuxtjs/vuetify',
 
-    // With options
-    ['@nuxtjs/vuetify', { /* module options */ }]
-  ],
+
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+    '@nuxtjs/vuetify',
   ],
+  vuetify: {
+
+  },
   bootstrapVue: {
     icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
   },
