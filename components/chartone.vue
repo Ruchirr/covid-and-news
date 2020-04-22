@@ -100,22 +100,6 @@ width: 2,
   console.log(err);
 });
 
-
-//    axios.get('/api/coronavirusIndia')
-// .then((response) =>{
-//   console.log("svsvsvsdf"+response.data.cases_time_series);
-//   this.coronaIndiaData = response.cases_time_series;
-//   //console.log(this.coronaIndiaData[3].date);
-// // this.chartOptionsLine.xAxis.data[3]=['q1','q2','q3'];
-// // this.chartOptionsLine.series.data[i];
-//   //  for(var i=0;i<10;i++){
-//   //      this.chartOptionsLine.xAxis.data[i].push(this.coronaIndiaData[i].date);
-//   //       // this.chartOptionsLine.series.data[i] = this.coronaIndiaData[i].totalconfirmed;
-//   //        }
-// }).catch((err) =>{
-//   console.log(err);
-// });
-
     },
   }
 
