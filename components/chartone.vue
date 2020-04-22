@@ -42,7 +42,7 @@
       <v-divider></v-divider>
 
       <v-card-actions class="justify-center">
-        <v-btn block text>Date: 30 January to Today</v-btn>
+        <v-btn block text to="/">Date: 30 January to Today</v-btn>
       </v-card-actions>
     </v-card>
 </div>
@@ -82,10 +82,10 @@ width: 2,
 
  axios.get('/api/coronavirusIndia')
 .then((response) =>{
-  console.log(response.data);
+  // console.log(response.data);
   //this.coronaIndiaData = response.data.statewise;
   this.coronaIndiaData = response.data.cases_time_series;
-  console.log(response.data.cases_time_series[0].date);
+  // console.log(response.data.cases_time_series[0].date);
 
   //this.chartOptionsLine.xAxis.data[3]=['q1','q2','q3'];
 //this.chartOptionsLine.series.data[i];

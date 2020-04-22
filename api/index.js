@@ -27,14 +27,14 @@ app.get('/coronavirusIndia', async function(req, res){
   const api_url = await  fetch("https://api.covid19india.org/data.json");
 
     const jsonObj = await api_url.json();
-  console.log(jsonObj);
     res.json(jsonObj);
 });
 
 // const api_u = await res_fetch.json();
 //     //const fetch_res  = await fetch(api_url);
 //     console.log(api_u);
-// res.json(api_u);
+// res.json(api_u);rs
+
 
 
 

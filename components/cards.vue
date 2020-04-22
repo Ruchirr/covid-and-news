@@ -5,6 +5,8 @@
       <b-row >
         <b-col class="bv-example-row" v-for="url in section" :key="url"  >
           <b-button  v-b-toggle.collapse-1 variant="none" @click="getPosts(url)">
+
+
         <country-flag :country='url' size='big' class="rounded"/>
         <h6 class="font-weight-light">{{url}}</h6>
         </b-button>
@@ -81,11 +83,11 @@ export default {
   data(){
 
     return{
-      section:['ae', 'ar', 'at', 'au', 'be', 'bg', 'br',
-      'ca', 'ch', 'cn', 'co', 'cu', 'cz', 'de', 'eg', 'fr', 'gb',
-      'gr', 'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr', 'lt', 'lv',
-      'ma', 'mx','my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl', 'pt', 'ro', 'rs', 'ru',
-      'sa', 'se', 'sg', 'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za' ],
+      section:['are', 'arg', 'aut', 'aus', 'bel', 'bgr', 'bra',
+      'can', 'che', 'chn', 'col', 'cub', 'cze', 'deu', 'egy', 'fra', 'gbr',
+      'grc', 'hkg', 'hun', 'idn', 'irl', 'isr', 'ind', 'ita', 'jpn', 'kor', 'ltu', 'lva',
+      'mar', 'mex','mys', 'nga', 'nld', 'nor', 'nzl', 'phl', 'pol', 'prt', 'rou', 'srb', 'rus',
+      'sau', 'swe', 'sgp', 'svn', 'svk', 'tha', 'tur', 'twn', 'ukr', 'usa', 'ven', 'zaf' ],
       x:"au",
       urlBase: 'https://newsapi.org/v2/top-headlines?country=',
       ApiKey: 'eb1ed87055d544a6896c608a5bb3c7ad',

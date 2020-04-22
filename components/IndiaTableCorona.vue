@@ -40,7 +40,7 @@ export default {
  mounted(){
    axios.get('/api/coronavirusIndia')
 .then((response) =>{
-  console.log(response.data);
+  // console.log(response.data);
   this.coronaIndiaData = response.data.statewise;
   this.coronaIndiaDataTested = response.data.cases_time_series;
 
