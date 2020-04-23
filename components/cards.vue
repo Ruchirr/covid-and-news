@@ -1,12 +1,17 @@
 <template>
 
   <div >
-  <b-container fluid="" v-if="isHidden" >
+    <!-- <img src="~assets/flags/fr.svg" /> -->
+    <!-- <b-img :src="require(`~/assets/images/fr.svg`)" thumbnail fluid alt="Responsive image"></b-img>
+    <b-img :src="require(`~/assets/images/fr.svg`)" fluid alt="Responsive image"></b-img> -->
+
+  <b-container fluid class="p-5" v-if="isHidden" >
       <b-row >
-        <b-col class="bv-example-row" v-for="url in section" :key="url"  >
-          <b-button  v-b-toggle.collapse-1 variant="none" @click="getPosts(url)">
-        <country-flag :country='url' size='big' class="rounded"/>
-        </b-button>
+        <b-col cols="2" v-for="url in section" :key="url" >
+          <!-- <b-button  v-b-toggle.collapse-1 variant="none" @click="getPosts(url)"> -->
+          <b-img class="rounded" :src="require(`~/assets/images/${url}.svg`)" @click="getPosts(url)"></b-img>
+        <!-- <country-flag :country='url' size='big' class="rounded"/> -->
+        <!-- </b-button> -->
          </b-col>
       </b-row>
   </b-container>
@@ -69,13 +74,15 @@
 </template>
 <script>
 import axios from 'axios';
-import CountryFlag from 'vue-country-flag'
+// import CountryFlag from 'vue-country-flag'
 export default {
-  components:{
-    CountryFlag
-  },
+  // components:{
+  //   CountryFlag
+  // },
   data(){
     return{
+              // mainProps: { blank: false, width: 75, height: 75,  class: 'm1'  }
+
       section:['ae', 'ar', 'at', 'au', 'be', 'bg', 'br',
       'ca', 'ch', 'cn', 'co', 'cu', 'cz', 'de', 'eg', 'fr', 'gb',
       'gr', 'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr', 'lt', 'lv',
