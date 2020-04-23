@@ -53,6 +53,7 @@ var j = [];
 for(var i=1;i<jsono.countries_stat.length;i++){
     j.push(jsono.countries_stat[i]);
 }
+console.log(j);
    res.json(j);
  });
 

@@ -29,10 +29,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: ['plugins/vue-lodash','plugins/vue-morris',
-  'plugins/chart',
+  'plugins/chart','~/plugins/vueflags',
 ],
-
-
   /*
   ** Nuxt.js dev-modules
   */

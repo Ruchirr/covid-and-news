@@ -5,10 +5,7 @@
       <b-row >
         <b-col class="bv-example-row" v-for="url in section" :key="url"  >
           <b-button  v-b-toggle.collapse-1 variant="none" @click="getPosts(url)">
-
-
         <country-flag :country='url' size='big' class="rounded"/>
-        <h6 class="font-weight-light">{{url}}</h6>
         </b-button>
          </b-col>
       </b-row>
@@ -61,9 +58,6 @@
     <template v-slot:footer>
       <i class="float-left font-weight-lighter mt-1 mt-sm-1 mt-md-1
       mt-lg-1 mt-xl-1" style="font-size:1.7vw; ">Published At: {{coronaData[i].publishedAt}}</i>
-
-      <b-button class="float-right ml-2 ml-sm-2 ml-md-2
-      ml-lg-2 ml-xl-2" variant="outline-dark" @click="asd()">Share</b-button>
       <b-button class="float-right" :href="coronaData[i].url" variant="outline-info">Website</b-button>
       </template>
   </b-card>
@@ -81,17 +75,15 @@ export default {
     CountryFlag
   },
   data(){
-
     return{
-      section:['are', 'arg', 'aut', 'aus', 'bel', 'bgr', 'bra',
-      'can', 'che', 'chn', 'col', 'cub', 'cze', 'deu', 'egy', 'fra', 'gbr',
-      'grc', 'hkg', 'hun', 'idn', 'irl', 'isr', 'ind', 'ita', 'jpn', 'kor', 'ltu', 'lva',
-      'mar', 'mex','mys', 'nga', 'nld', 'nor', 'nzl', 'phl', 'pol', 'prt', 'rou', 'srb', 'rus',
-      'sau', 'swe', 'sgp', 'svn', 'svk', 'tha', 'tur', 'twn', 'ukr', 'usa', 'ven', 'zaf' ],
+      section:['ae', 'ar', 'at', 'au', 'be', 'bg', 'br',
+      'ca', 'ch', 'cn', 'co', 'cu', 'cz', 'de', 'eg', 'fr', 'gb',
+      'gr', 'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr', 'lt', 'lv',
+      'ma', 'mx','my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl', 'pt', 'ro', 'rs', 'ru',
+      'sa', 'se', 'sg', 'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za' ],
       x:"au",
       urlBase: 'https://newsapi.org/v2/top-headlines?country=',
       ApiKey: 'eb1ed87055d544a6896c608a5bb3c7ad',
-
       post: {},
     coronaData:{},
     isHidden: true,
@@ -107,24 +99,12 @@ mounted() {
 // .then((response) =>{
 //   console.log(response.data.articles);
 //   this.coronaData = response.data.articles;
-
 // }).catch((err) =>{
 //   console.log(err);
 // });
 //this.getPosts('in')
 },
 methods:{
-  asd(title, image, description){
-    if(navigator.share){
-      navigator.share({
-        title: title,
-        imgage: image,
-        description: description
-      }).then(()=>{
-        console.log("Share Success")
-      }).catch(console.err);
-    }
-  },
  clearInterval() {
         if (this.interval) {
           clearInterval(this.interval)
@@ -158,10 +138,6 @@ methods:{
       this.isHidden = true;
        this.showButton = true;
     },
-
-
   }
-
 }
-
 </script>
