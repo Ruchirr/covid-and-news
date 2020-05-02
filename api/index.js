@@ -10,6 +10,33 @@
 var express = require("express");
 var app = express();
 var fetch = require("node-fetch");
+
+//using twit package
+
+var Twit = require('twit');
+
+var configTwit = require('../node_modules/configTwits');
+console.log(configTwit);
+
+var T = new Twit(configTwit);
+
+var params= {
+  q: 'COVID-19',
+  count: 2
+}
+var feed;
+T.get('search/tweets', params, gotData);
+
+function gotData(err, data, response){
+  console.log(data);
+   feed = data;
+};
+
+app.get('/tweeter', (req, res, next) => {
+  res.json(feed);
+});
+
+// app.listen(3000);
 // app.get('/covidnews', async function(req, res){
 //   const api_url = await  fetch("http://newsapi.org/v2/top-headlines?country=au&apiKey=eb1ed87055d544a6896c608a5bb3c7ad");
 

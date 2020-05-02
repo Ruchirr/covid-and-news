@@ -28,6 +28,7 @@
     "node-fetch": "^2.6.0",
     "nuxt": "^2.0.0",
     "raphael": "^2.3.0",
+    "twit": "^2.2.11",
     "unirest": "^0.6.0",
     "vue-chartjs": "^3.5.0",
     "vue-country-flag": "^2.0.0",
