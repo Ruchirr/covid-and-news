@@ -92,7 +92,7 @@ export default {
       'ma', 'mx','my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl', 'pt', 'ro', 'rs', 'ru',
       'sa', 'se', 'sg', 'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za' ],
       x:"au",
-      urlBase: 'https://newsapi.org/v2/top-headlines?country=',
+      urlBase: 'http://newsapi.org/v2/top-headlines?country=',
       ApiKey: 'eb1ed87055d544a6896c608a5bb3c7ad',
       post: {},
     coronaData:{},
@@ -131,8 +131,13 @@ console.log("in time out");
 }.bind(this), 3000)
     console.log("inside posts");
       let url = this.urlBase+section+"&apiKey="+this.ApiKey;
-      axios.get(url).then((response) => {
+      axios.get(url, {
+        headers: {"Access-Control-Allow-Origin": "*",
+        'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+}
+      }).then((response) => {
         this.coronaData = response.data.articles;
+        console.log(this.coronaData);
       }).catch( error => { console.log(error); });
     },
     unHideFlags(){
