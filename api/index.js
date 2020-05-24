@@ -8,46 +8,59 @@
 //using express.js
 
 var express = require("express");
+const bodyParser = require('body-parser');
 var app = express();
 var fetch = require("node-fetch");
+app.use(bodyParser.json());
+app.use(express.static('public'));
+//app.use(express.json());
+// //using twit package
 
-//using twit package
+// var Twit = require('twit');
 
-var Twit = require('twit');
+// var configTwit = require('../node_modules/configTwits');
+// console.log(configTwit);
 
-var configTwit = require('../node_modules/configTwits');
-console.log(configTwit);
+// var T = new Twit(configTwit);
 
-var T = new Twit(configTwit);
+// var params= {
+//   q: 'COVID-19',
+//   count: 2
+// }
+// var feed;
+// T.get('search/tweets', params, gotData);
 
-var params= {
-  q: 'COVID-19',
-  count: 2
-}
-var feed;
-T.get('search/tweets', params, gotData);
+// function gotData(err, data, response){
+//   console.log(data);
+//    feed = data;
+// };
 
-function gotData(err, data, response){
-  console.log(data);
-   feed = data;
-};
-
-app.get('/tweeter', (req, res, next) => {
-  res.json(feed);
-});
+// app.get('/tweeter', (req, res, next) => {
+//   res.json(feed);
+// });
 
 // app.listen(3000);
 // app.get('/covidnews', async function(req, res){
-//   const api_url = await  fetch("http://newsapi.org/v2/top-headlines?country=au&apiKey=eb1ed87055d544a6896c608a5bb3c7ad");
+//   const api_url = await  fetch("http://newsapi.org/v2/top-headlines?country=au&apiKey=09039a8e8c714f1f8b6380fdcd4db654");
 
 //     const jsonObj = await api_url.json();
 
 //     res.json(jsonObj);
 // });
 
-//const api_url = await res_fetch.json();
-    //const fetch_res  = await fetch(api_url);
-//console.log(jsonObj.articles[0].urlToImage);
+app.post('/client', async function(request, response){
+  console.log(request.body.section);
+  const api_url = await  fetch("http://newsapi.org/v2/top-headlines?country="+request.body.section+"&apiKey=09039a8e8c714f1f8b6380fdcd4db654");
+
+    const jsonObj = await api_url.json();
+//console.log(jsonObj);
+    response.json(jsonObj.articles);
+  //response.end();
+});
+
+// const api_url = await res_fetch.json();
+//     const fetch_res  = await fetch(api_url);
+// console.log(jsonObj.articles[0].urlToImage);
 
 
 app.get('/coronavirusIndia', async function(req, res){

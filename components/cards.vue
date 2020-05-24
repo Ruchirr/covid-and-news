@@ -92,8 +92,8 @@ export default {
       'ma', 'mx','my', 'ng', 'nl', 'no', 'nz', 'ph', 'pl', 'pt', 'ro', 'rs', 'ru',
       'sa', 'se', 'sg', 'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za' ],
       x:"au",
-      urlBase: 'http://newsapi.org/v2/top-headlines?country=',
-      ApiKey: 'eb1ed87055d544a6896c608a5bb3c7ad',
+      urlBase: 'https://newsapi.org/v2/top-headlines?country=',
+      ApiKey: '09039a8e8c714f1f8b6380fdcd4db654',
       post: {},
     coronaData:{},
     isHidden: true,
@@ -110,7 +110,7 @@ mounted() {
 // }).catch((err) =>{
 //   console.log(err);
 // });
-//this.getPosts('in')
+// this.getPosts('in')
 },
 methods:{
  clearInterval() {
@@ -119,7 +119,8 @@ methods:{
           this.interval = null
         }
       },
-  getPosts(section) {
+  async getPosts(section) {
+     //console.log("asdfsdf"+section);
     this.showSpinner = true;
 this.isHidden = false;
 
@@ -129,16 +130,33 @@ this.showCards=true;
  this.showSpinner = false;
 console.log("in time out");
 }.bind(this), 3000)
-    console.log("inside posts");
-      let url = this.urlBase+section+"&apiKey="+this.ApiKey;
-      axios.get(url, {
-        headers: {"Access-Control-Allow-Origin": "*",
-        'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-}
-      }).then((response) => {
-        this.coronaData = response.data.articles;
-        console.log(this.coronaData);
-      }).catch( error => { console.log(error); });
+    // console.log("inside posts");
+       let url = this.urlBase+section+"&apiKey="+this.ApiKey;
+    //   axios.get(url).then((response) => {
+    //     this.coronaData = response.data.articles;
+    //   }).catch( error => { console.log(error); });
+    console.log(section);
+    const x = {
+      "section": section
+    }
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify(x)
+
+    };
+    const response = await fetch('/api/client', options);
+     this.coronaData = await response.json();
+    // console.log(this.coronaData);
+// let response =  fetch(url, {
+//   mode: 'no-cors',
+// });
+// console.log(response);
+// this.coronaData = response;
+
     },
     unHideFlags(){
       this.isHidden = true;
