@@ -28,31 +28,40 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: "@/plugins/chart", ssr: false }],
+  plugins: ['plugins/vue-lodash','plugins/vue-morris',
+  'plugins/chart','~/plugins/vueflags',
+],
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-    // Simple usage
-    '@nuxtjs/vuetify',
 
-    // With options
-    ['@nuxtjs/vuetify', { /* module options */ }]
-  ],
+
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
+    '@nuxtjs/svg',
+    '@nuxtjs/vuetify',
   ],
+  vuetify: {
+
+  },
   bootstrapVue: {
     icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
+  },
+  axios:{
+    baseURL: process.env.BASE_URL || 'http://localhost:3000/ '
+  },
+  server: {
+    port: process.env.PORT || 3000
   },
   /*
   ** Build configuration
   */
   build: {
+    vendor: ['vue-social-sharing'],
     /*
     ** You can extend webpack config here
     */

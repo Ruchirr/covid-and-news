@@ -1,24 +1,23 @@
 <template>
-<div class="table-responsive-md table-responsive-sm table-responsive-lg table-responsive-xl table-responsive">
-  <!-- sticky-header -->
+<div class="mt-5 table-responsive-md table-responsive-sm table-responsive-lg table-responsive-xl table-responsive">
+  <!-- sticky-header
+  :fields="fields" -->
+
   <b-table
-    striped hover
-    responsive="true"
+
+     hover table-secondary
+    responsive="sm"
       :items="coronaData"
       :fields="fields"
       large
+      title= "Corona Virus All Over The World"
+      table-variant="info"
+      head-variant="dark"
+
 
     >
     </b-table>
 
-    <!-- <div>
-      Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
-      <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b>
-    </div> -->
-
-<h1>
-  Data
-</h1>
 </div>
 </template>
 <script>
@@ -26,25 +25,23 @@ import axios from 'axios';
 export default {
   data(){
   return {
-    sortBy: 'age',
-        sortDesc: false,
     coronaData:{},
     fields: [
-          { key: 'country_name', sortable: true },
-          { key: 'cases', sortable: true },
-          { key: 'deaths', sortable: true },
+          { key: 'country_name'},
+          { key: 'cases'},
+          { key: 'deaths', variant: 'warning'},
 
-           { key: 'total_recovered', sortable: true },
-          { key: 'new_deaths', sortable: true },
-          { key: 'new_cases', sortable: true },
-          { key: 'serious_critical', sortable: true },
-            { key: 'active_cases', sortable: true },
-          { key: 'total_cases_per_1m_population', sortable: true }
+           { key: 'total_recovered'},
+          { key: 'new_deaths', variant: 'danger' },
+          { key: 'new_cases'},
+          { key: 'serious_critical'},
+            { key: 'active_cases', variant: 'primary'},
+          { key: 'total_cases_per_1m_population'}
         ],
       }
     },
   mounted() {
-axios.get('http://localhost:3000/api/coronavirus')
+axios.get('/api/coronavirus')
 .then((response) =>{
   console.log(response.data);
   this.coronaData = response.data;
@@ -57,18 +54,3 @@ axios.get('http://localhost:3000/api/coronavirus')
 
 }
 </script>
-<style>
-.NuxtLogo {
-  animation: 1s appear;
-  margin: auto;
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-</style>
