@@ -25,7 +25,7 @@
     "express": "^4.16.4",
     "hchs-vue-charts": "^1.2.8",
     "jquery": "^3.5.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-fetch": "^2.6.0",
     "nuxt": "^2.0.0",
     "raphael": "^2.3.0",
