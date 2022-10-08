@@ -77,25 +77,27 @@ app.get('/coronavirusIndia', async function(req, res){
 
 
 
+//07/10/2022 Closed
 
-app.get('/coronavirus', async function(req, res) {
+// app.get('/coronavirus', async function(req, res) {
 
-  //const api_url = `https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php`
-   const res_fetch = await  fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php", {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
-      "x-rapidapi-key": "b48b2ee0femsh3436bac103c4607p1d6476jsn5585de1c36e2"
-    }
-  });
-   const jsono = await res_fetch.json();
-var j = [];
-for(var i=1;i<jsono.countries_stat.length;i++){
-    j.push(jsono.countries_stat[i]);
-}
-console.log(j);
-   res.json(j);
- });
+//   //const api_url = `https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php else https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php`
+//    const res_fetch = await  fetch("https://worldometers.p.rapidapi.com/api/coronavirus/world", {
+//     "method": "GET",
+//     "headers": {
+//       "x-rapidapi-host": "worldometers.p.rapidapi.com",
+//       "x-rapidapi-key": "7c7402fc73mshc3dbdfaf5f75372p14a0f8jsne2818c0f61f1"
+//     }
+//   });
+//    const jsono = await res_fetch.json();
+//    console.log("Check json@@@@@@@@      "+jsono);
+// var j = [];
+// for(var i=1;i<jsono.countries_stat.length;i++){
+//     j.push(jsono.countries_stat[i]);
+// }
+// console.log(j);
+//    res.json(j);
+//  });
 
 module.exports = {
   path: "/api/",
