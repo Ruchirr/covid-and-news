@@ -53,7 +53,13 @@
 <br/>
 <br/>
   <b-row class="text-center">
-  <b-col style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Qualified in Masters of Information Technology from Central Queensland University, Australia. Offering internship experience in software development and outstanding academic performance in the multinational culture. 60% face to face customer support with multinational clients in Australia and India worked casually, as a volunteer and as an intern with various organisation involved with hospitality, Information Technology, Education</b-col>
+  <b-col style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+    Qualified in Masters of Information Technology from Central Queensland University,
+     Australia. Offering internship experience in software development and 
+     outstanding academic performance in the multinational culture. 60% face to 
+     face customer support with multinational clients in Australia and India 
+     worked casually and as a volunteer with various organisation 
+     involved with Hospitality, Health, Education, Hotel and Welfare Industries</b-col>
   
   
  
