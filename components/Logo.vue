@@ -1,31 +1,37 @@
 <template>
 
 <b-container fluid="sm" class="b-form-row">
-  
+  <br/>
+<br/>
+<br/>
   <b-row class="text-center">
     <b-card bg-variant="dark" text-variant="white">
-      <b-card-text> 
+      <b-card-text style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"> 
           On the request of many I am sharing how I loaded the current status of each country
       </b-card-text> 
     <b-img src="~/assets/jpeg/codeSnippetOne.png" fluid alt="Responsive image"></b-img>
-  <b-card-text>
+  <b-card-text style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
             The api is no longer free, therefore I am closing the code. In order to take a look on how current updates of 
             API data can make website dynamic in nature please check the news section in navigation.
           </b-card-text>
          </b-card>
 </b-row>
 <br/>
+<br/>
+<br/>
 <b-row class="text-center">
         <b-card bg-variant="dark" text-variant="white">
-        <b-card-text > Front End Loop To Add it into the Illuminati "BootStrap" Table
+        <b-card-text style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"> Front End Loop To Add it into the Illuminati "BootStrap" Table
   </b-card-text> 
   <b-img src="~/assets/jpeg/codeSnippetTwo.png" fluid alt="Responsive image"></b-img>
-<b-card-text>
+<b-card-text style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
             This is a script part and could be organically stored and retrived, though I used this method
     </b-card-text>
          </b-card>
 </b-row>
 
+<br/>
+<br/>
 <br/>
   <b-row class="text-center">
   <b-card no-body class="overflow-hidden" style="max-width: 540px;">
@@ -44,8 +50,10 @@
   </b-card>
  </b-row>
  <br/>
+<br/>
+<br/>
   <b-row class="text-center">
-  <b-col>Qualified in Masters of Information Technology from Central Queensland University, Australia. Offering internship experience in software development and outstanding academic performance in the multinational culture. 60% face to face customer support with multinational clients in Australia and India worked casually, as a volunteer and as an intern with various organisation involved with hospitality, Information Technology, Education</b-col>
+  <b-col style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Qualified in Masters of Information Technology from Central Queensland University, Australia. Offering internship experience in software development and outstanding academic performance in the multinational culture. 60% face to face customer support with multinational clients in Australia and India worked casually, as a volunteer and as an intern with various organisation involved with hospitality, Information Technology, Education</b-col>
   
   
  
@@ -64,11 +72,11 @@
     style="max-width: 20rem;"
     class="mb-2"
   >
-    <b-card-text style="color:brown; font-weight: 900;">
+    <b-card-text style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:brown; font-weight: 900;">
       Open for further discussion 
     </b-card-text>
 
-    <b-button href="/isd" variant="primary">With Pleasure</b-button>
+    <b-button href="/isd" variant="primary" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">With Pleasure</b-button>
   </b-card>
 </div>
 
