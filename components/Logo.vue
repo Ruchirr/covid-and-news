@@ -54,12 +54,7 @@
 <br/>
   <b-row class="text-center">
   <b-col style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
-    Qualified in Masters of Information Technology from Central Queensland University,
-     Australia. Offering internship experience in software development and 
-     outstanding academic performance in the multinational culture. 60% face to 
-     face customer support with multinational clients in Australia and India 
-     worked casually and as a volunteer with various organisation 
-     involved with Hospitality, Health, Education, Hotel and Welfare Industries</b-col>
+    </b-col>
   
   
  
@@ -81,7 +76,12 @@
     <b-card-text style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:brown; font-weight: 900;">
       Open for further discussion 
     </b-card-text>
-
+<b-card-text>Qualified in Masters of Information Technology from Central Queensland University,
+     Australia. Offering internship experience in software development and 
+     outstanding academic performance in the multinational culture. 60% face to 
+     face customer support with multinational clients in Australia and India 
+     worked casually and as a volunteer with various organisation 
+     involved with Hospitality, Health, Education, Hotel and Welfare Industries</b-card-text>
     <b-button href="/isd" variant="primary" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">With Pleasure</b-button>
   </b-card>
 </div>
