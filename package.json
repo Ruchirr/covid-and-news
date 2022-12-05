@@ -1,5 +1,5 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "More About My Academics, Extras, Work, Travel And Other Integrations",
   "author": "Ruchir Patil",
@@ -22,6 +22,7 @@
     "core-js": "^2.6.11",
     "echarts": "^4.7.0",
     "express": "^4.16.4",
+    "fibers": "^4.0.2",
     "hchs-vue-charts": "^1.2.8",
     "jquery": "^3.5.0",
     "lodash": "^4.17.15",
@@ -49,5 +50,18 @@
     "babel-preset-env": "^1.7.0",
     "cross-env": "^7.0.3",
     "nodemon": "^1.18.9"
-  }
+  },
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ruchirr/covid-and-news.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ruchirr/covid-and-news/issues"
+  },
+  "homepage": "https://github.com/Ruchirr/covid-and-news#readme"
 }
